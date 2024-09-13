@@ -10,7 +10,7 @@ export default function Footer() {
           Supervised by Prof Jan Buys
         </p>
         <p className="mt-2 text-sm text-gray-400">
-          Advancing machine learning and molecular generation
+          Exploring machine learning and molecular generation
         </p>
       </div>
     </footer>
