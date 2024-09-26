@@ -122,11 +122,11 @@ const ArchitecturesPage = () => {
           <ResearchQuestions />
         </FadeInSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <FadeInSection delay={0.5}>
             <ArchitectureComparison
-              title="Stochastic Decoders (Sampling)"
-              description="blah blab blab"
+              title="Directed Generation"
+              description="Directed Generation is a close-ended generation task where the output is a constrained transformation of the input. It typically favours deterministic methods, which perform better in scenarios like summarisation where the output needs to be closely aligned with the input."
               icon={Zap}
               expanded={expandedSection === "mamba"}
               onToggle={() => toggleSection("mamba")}
@@ -134,8 +134,31 @@ const ArchitecturesPage = () => {
           </FadeInSection>
           <FadeInSection delay={0.6}>
             <ArchitectureComparison
-              title="Deterministic Decoders (Beam Search, ...)"
-              description="blah blab blab"
+              title="Open-ended Generation"
+              description="Open-ended Generation allows for a significant degree of freedom in determining what can plausibly come next. It typically favours the use of stochastic methods, which are more suitable for tasks like conditional story generation and contextual text continuation."
+              icon={Cpu}
+              expanded={expandedSection === "transformer"}
+              onToggle={() => toggleSection("transformer")}
+            />
+          </FadeInSection>
+        </div>
+
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <FadeInSection delay={0.5}>
+            <ArchitectureComparison
+              title="Search-based methods"
+              description="Search-based methods are deterministic and perform better in scenarios like summarisation where the output needs to be closely aligned with the input. They are less problematic in terms of repetition and genericness due to the constrained nature of the tasks. Beam search and greedy search are examples of search-based methods."
+              icon={Zap}
+              expanded={expandedSection === "mamba"}
+              onToggle={() => toggleSection("mamba")}
+            />
+          </FadeInSection>
+          <FadeInSection delay={0.6}>
+            <ArchitectureComparison
+              title="Stochastic methods"
+              description="Stochastic methods are more suitable for tasks like conditional story generation and contextual text continuation. They allow for a significant degree of freedom in determining what can plausibly come next. Sampling-based methods are examples of stochastic methods. Methods like top-p sampling and temperature sampling are used to generate diverse and unique molecules."
               icon={Cpu}
               expanded={expandedSection === "transformer"}
               onToggle={() => toggleSection("transformer")}
@@ -147,7 +170,7 @@ const ArchitecturesPage = () => {
           <KeyFindings />
         </FadeInSection>
 
-        <FadeInSection delay={0.8}>
+        {/* <FadeInSection delay={0.8}>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <BarChart2 className="mr-2" />
@@ -155,9 +178,9 @@ const ArchitecturesPage = () => {
             </h2>
             <PerformanceChart />
           </div>
-        </FadeInSection>
+        </FadeInSection> */}
 
-        <FadeInSection delay={0.9}>
+        {/* <FadeInSection delay={0.9}>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <Brain className="mr-2" />
@@ -170,17 +193,17 @@ const ArchitecturesPage = () => {
               their SAFE counterparts.
             </p>
           </div>
-        </FadeInSection>
+        </FadeInSection> */}
 
-        <FadeInSection delay={1.0}>
+        {/* <FadeInSection delay={1.0}>
           <ComputationalEfficiency />
-        </FadeInSection>
+        </FadeInSection> */}
 
         <FadeInSection delay={1.1}>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <ChartBar className="mr-2" />
-              Molecular Property Distributions and Perplexity
+              Molecular Properties Visualization
             </h2>
             <ImageGallery />
           </div>
@@ -193,25 +216,21 @@ const ArchitecturesPage = () => {
               Implications for AI-Driven Molecular Design
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              The comparable performance of MAMBA models to Transformer-based
-              models, coupled with their efficiency advantages, has significant
-              implications for AI-driven molecular design:
+              The improvement of results compared to the default SAFE model result in several implications for AI-driven molecular design:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               <li>
-                Potential for handling longer molecular sequences efficiently
+                Potential for generating more diverse and unique molecules
               </li>
               <li>
                 Opens up possibilities for modeling complex macromolecules or
                 entire chemical pathways
               </li>
               <li>
-                Improved computational efficiency could accelerate drug
-                discovery processes
+                Reduces the need for extensive fine-tuning of hyperparameters
               </li>
               <li>
-                State Space Models offer a viable and efficient alternative to
-                Transformer-based models for large-scale applications
+                Can reduce the cost of making new discoveries in drug design
               </li>
             </ul>
           </div>
@@ -220,7 +239,7 @@ const ArchitecturesPage = () => {
         <FadeInSection delay={1.3}>
           <div className="mt-12 text-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="/documents/LMBANR001.pdf"
+              href="/documents/MRCGAB004.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -229,7 +248,7 @@ const ArchitecturesPage = () => {
               <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
             </a>
             <a
-              href="/documents/LMBANR001_LR.pdf"
+              href="/documents/MRCGAB004_LR.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl"
