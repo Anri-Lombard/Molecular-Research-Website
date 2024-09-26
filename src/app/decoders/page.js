@@ -151,8 +151,8 @@ const ArchitecturesPage = () => {
               title="Search-based methods"
               description="Search-based methods are deterministic and perform better in scenarios like summarisation where the output needs to be closely aligned with the input. They are less problematic in terms of repetition and genericness due to the constrained nature of the tasks. Beam search and greedy search are examples of search-based methods."
               icon={Zap}
-              expanded={expandedSection === "mamba"}
-              onToggle={() => toggleSection("mamba")}
+              expanded={expandedSection === "searchBased"}
+              onToggle={() => toggleSection("searchBased")}
             />
           </FadeInSection>
           <FadeInSection delay={0.6}>
@@ -160,8 +160,8 @@ const ArchitecturesPage = () => {
               title="Stochastic methods"
               description="Stochastic methods are more suitable for tasks like conditional story generation and contextual text continuation. They allow for a significant degree of freedom in determining what can plausibly come next. Sampling-based methods are examples of stochastic methods. Methods like top-p sampling and temperature sampling are used to generate diverse and unique molecules."
               icon={Cpu}
-              expanded={expandedSection === "transformer"}
-              onToggle={() => toggleSection("transformer")}
+              expanded={expandedSection === "stochastic"}
+              onToggle={() => toggleSection("stochastic")}
             />
           </FadeInSection>
         </div>
