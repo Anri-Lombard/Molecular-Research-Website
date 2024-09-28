@@ -42,42 +42,29 @@ const ImageGallery = () => {
   const [modalImage, setModalImage] = useState(null);
 
   const distributionProperties = [
-    "Aromatic Rings",
-    "H-Bond Acceptors",
-    "H-Bond Donors",
-    "LogP",
-    "Molecular Weight",
-    "QED",
-    "Rotatable Bonds",
-    "TPSA",
+    "Table of Metrics",
   ];
 
   const smallModelImages = distributionProperties.map((prop) => ({
-    src: `/images/small_model_${prop
-      .toLowerCase()
-      .replace(/-/g, "_")
-      .replace(/ /g, "_")}.png`,
+    src: `/images/gabe/combined_final_small.png`,
     alt: `${prop} Distribution (Small Models)`,
   }));
 
   const largeModelImages = distributionProperties.map((prop) => ({
-    src: `/images/large_model_${prop
-      .toLowerCase()
-      .replace(/-/g, "_")
-      .replace(/ /g, "_")}.png`,
+    src: `/images/gabe/combined_final_big.png`,
     alt: `${prop} Distribution (Large Models)`,
   }));
 
-  const perplexityImages = [
-    {
-      src: "/images/perplexity_small_models.png",
-      alt: "Perplexity for Small Models",
-    },
-    {
-      src: "/images/perplexity_large_models.png",
-      alt: "Perplexity for Large Models",
-    },
-  ];
+  // const perplexityImages = [
+  //   {
+  //     src: "/images/perplexity_small_models.png",
+  //     alt: "Perplexity for Small Models",
+  //   },
+  //   {
+  //     src: "/images/perplexity_large_models.png",
+  //     alt: "Perplexity for Large Models",
+  //   },
+  // ];
 
   const getActiveImages = () => {
     switch (activeTab) {
@@ -85,8 +72,8 @@ const ImageGallery = () => {
         return smallModelImages;
       case "large":
         return largeModelImages;
-      case "perplexity":
-        return perplexityImages;
+      // case "perplexity":
+      //   return perplexityImages;
       default:
         return smallModelImages;
     }
@@ -103,7 +90,7 @@ const ImageGallery = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-center space-x-4">
-        {["small", "large", "perplexity"].map((tab) => (
+        {["small", "large"].map((tab) => (
           <button
             key={tab}
             className={`px-4 py-2 rounded transition-colors ${
@@ -115,7 +102,7 @@ const ImageGallery = () => {
           >
             {tab === "small" && "Small Model Distributions"}
             {tab === "large" && "Large Model Distributions"}
-            {tab === "perplexity" && "Perplexity Graphs"}
+          
           </button>
         ))}
       </div>
