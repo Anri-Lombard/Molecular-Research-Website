@@ -1,4 +1,4 @@
-// app/architectures/page.js
+// app/tokenizers/page.js
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -16,7 +16,7 @@ import {
   ChartBar,
 } from "lucide-react";
 import PerformanceChart from "./PerformanceChart";
-import PerplexityTable from "./PerplexityTable";
+import TokenizationEfficiencyTable from "./TokenizationEfficiencyTable";
 import ResearchQuestions from "./ResearchQuestions";
 import KeyFindings from "./KeyFindings";
 import ComputationalEfficiency from "./ComputationalEfficiency";
@@ -98,21 +98,20 @@ const ArchitecturesPage = () => {
       <div className="max-w-7xl mx-auto">
         <FadeInSection>
           <h1 className="text-5xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-            Model Architectures in Molecular Generation
+          Tokenization Techniques in Molecular Generation
           </h1>
         </FadeInSection>
 
         <FadeInSection delay={0.2}>
           <p className="text-xl text-center mb-12 text-gray-700 dark:text-gray-300">
-            Comparing Transformer and MAMBA (State Space Models) architectures
-            for de novo molecular generation using the SAFE representation
+          Exploring the impact of Byte Pair Encoding (BPE) and Unigram Language Model (ULM) tokenization techniques on molecular generation using SAFE and SELFIES representations.
           </p>
         </FadeInSection>
 
         <FadeInSection delay={0.3}>
           <div className="bg-blue-100 dark:bg-blue-900 rounded-lg p-4 mb-8 shadow-md">
             <p className="text-sm text-center italic text-blue-800 dark:text-blue-200">
-              Research conducted by Anri Lombard, supervised by Jan Buys at the
+              Research conducted by Mahomed Aadil Ally, supervised by Jan Buys at the
               University of Cape Town
             </p>
           </div>
@@ -125,20 +124,20 @@ const ArchitecturesPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <FadeInSection delay={0.5}>
             <ArchitectureComparison
-              title="MAMBA (State Space Models)"
-              description="MAMBA represents a significant advancement in sequence modeling, building upon structured state space models (SSMs). It incorporates a selective state space model, allowing dynamic focus on specific inputs based on content. This efficiency in modeling complex sequences makes it particularly well-suited for capturing the nature of molecular structures."
+              title="Byte Pair Encoding (BPE)"
+              description="BPE iteratively merges frequent character pairs, efficiently capturing common molecular substructures. It is particularly suited for generating shorter sequences, reducing model complexity in molecular generation tasks."
               icon={Zap}
-              expanded={expandedSection === "mamba"}
-              onToggle={() => toggleSection("mamba")}
+              expanded={expandedSection === "bpe"}
+              onToggle={() => toggleSection("bpe")}
             />
           </FadeInSection>
           <FadeInSection delay={0.6}>
             <ArchitectureComparison
-              title="Transformers (SAFE-GPT)"
-              description="Transformer-based models, specifically SAFE-GPT, have been widely adopted in NLP tasks and molecular generation. The core of the Transformer is its self-attention mechanism, which allows the model to weigh the importance of different parts of the input sequence dynamically. This has proven especially effective in capturing long-range dependencies in molecular structures."
+              title="Unigram Language Model (ULM)"
+              description="ULM tokenization assigns probabilities to potential subword units, offering greater flexibility in segmentation. It excels in handling complex molecular patterns and generating diverse molecular structures."
               icon={Cpu}
-              expanded={expandedSection === "transformer"}
-              onToggle={() => toggleSection("transformer")}
+              expanded={expandedSection === "ulm"}
+              onToggle={() => toggleSection("ulm")}
             />
           </FadeInSection>
         </div>
@@ -161,14 +160,9 @@ const ArchitecturesPage = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <Brain className="mr-2" />
-              Perplexity Comparison
+              Tokenization Efficiency Comparison
             </h2>
-            <PerplexityTable />
-            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-              Note: Lower perplexity values indicate better model performance.
-              MAMBA models consistently showed lower perplexity compared to
-              their SAFE counterparts.
-            </p>
+            <TokenizationEfficiencyTable />
           </div>
         </FadeInSection>
 
@@ -180,7 +174,7 @@ const ArchitecturesPage = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <ChartBar className="mr-2" />
-              Molecular Property Distributions and Perplexity
+              Molecular Property Distributions and Tokenization Analysis
             </h2>
             <ImageGallery />
           </div>
@@ -190,28 +184,26 @@ const ArchitecturesPage = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <Zap className="mr-2" />
-              Implications for AI-Driven Molecular Design
+              Implications of Tokenization for AI-Driven Molecular Design
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              The comparable performance of MAMBA models to Transformer-based
-              models, coupled with their efficiency advantages, has significant
-              implications for AI-driven molecular design:
+            The comparison of Byte Pair Encoding (BPE) and Unigram Language Model (ULM) tokenization techniques reveals significant implications for AI-driven molecular design:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               <li>
-                Potential for handling longer molecular sequences efficiently
+              Improved efficiency in processing large molecular datasets with BPE's compact representations
               </li>
               <li>
-                Opens up possibilities for modeling complex macromolecules or
-                entire chemical pathways
+              Enhanced generation of synthetically accessible molecules using ULM, particularly with SELFIES representations
               </li>
               <li>
-                Improved computational efficiency could accelerate drug
-                discovery processes
+              Necessity for task-specific optimization due to the complex relationship between tokenization efficiency and molecular generation quality
               </li>
               <li>
-                State Space Models offer a viable and efficient alternative to
-                Transformer-based models for large-scale applications
+              Potential for fine-tuning model performance by balancing vocabulary size and tokenization efficiency
+              </li>
+              <li>
+              Significant impact on the quality and diversity of generated molecules based on tokenization technique choice
               </li>
             </ul>
           </div>
@@ -220,7 +212,7 @@ const ArchitecturesPage = () => {
         <FadeInSection delay={1.3}>
           <div className="mt-12 text-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="/documents/LMBANR001.pdf"
+              href="/documents/ALLMAH002.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -229,7 +221,7 @@ const ArchitecturesPage = () => {
               <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
             </a>
             <a
-              href="/documents/LMBANR001_LR.pdf"
+              href="/documents/ALLMAH002_LR.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -244,4 +236,4 @@ const ArchitecturesPage = () => {
   );
 };
 
-export default ArchitecturesPage;
+export default TokenizersPage;

@@ -1,4 +1,4 @@
-// app/architectures/ComputationalEfficiency.js
+// app/tokenizers/ComputationalEfficiency.js
 import React from "react";
 import { Battery, Zap } from "lucide-react";
 

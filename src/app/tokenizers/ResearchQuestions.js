@@ -2,8 +2,10 @@ import React from "react";
 
 const ResearchQuestions = () => {
   const questions = [
-    "How do MAMBA models compare to Transformer-based models in terms of molecular generation quality?",
-    "What are the computational efficiency differences between MAMBA and Transformer models?",
+    "How do Byte Pair Encoding (BPE) and Unigram Language Model (ULM) compare in terms of tokenization efficiency for molecular data?",
+    "What impact does the choice of tokenization technique have on the performance of transformer models in molecular generation?",
+    "How does tokenization influence the validity and novelty of generated molecules across different molecular representations (SAFE and SELFIES)?",
+    "What are the trade-offs between vocabulary size and model performance in molecular generation using BPE and ULM?",
   ];
 
   return (

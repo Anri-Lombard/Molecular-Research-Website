@@ -1,13 +1,13 @@
-// app/architectures/KeyFindings.js
+// app/tokenizers/KeyFindings.js
 import React from "react";
 
 const KeyFindings = () => {
   const findings = [
-    "Both MAMBA and Transformer models achieved high validity (98-100%) and uniqueness (99.9-100%) scores.",
-    "MAMBA models demonstrated lower GPU power consumption (up to 30% reduction) compared to Transformer models.",
-    "MAMBA models consistently showed lower perplexity throughout the training process.",
-    "Large MAMBA models (90M parameters) completed training in 64 hours compared to 90 hours for equivalent Transformer models.",
-    "MAMBA models showed slightly higher diversity scores, particularly in larger model configurations.",
+    "Byte Pair Encoding (BPE) consistently produced shorter token sequences, improving model training efficiency.",
+    "Unigram Language Model (ULM) achieved better results in generating diverse and novel molecular structures, particularly with larger vocabulary sizes.",
+    "BPE tokenization resulted in higher compression ratios, making it more efficient for handling large-scale molecular datasets.",
+    "ULM tokenization showed advantages in handling complex molecular substructures, especially in the SELFIES representation.",
+    "The choice of tokenization technique significantly impacted the model's ability to generate valid and synthesizable molecules.",
   ];
 
   return (

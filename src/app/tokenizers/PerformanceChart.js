@@ -1,4 +1,4 @@
-// app/architectures/PerformanceChart.js
+// app/tokenizers/PerformanceChart.js
 import React from "react";
 import {
   BarChart,
@@ -14,28 +14,32 @@ import {
 const PerformanceChart = () => {
   const data = [
     {
-      metric: "Validity",
-      "SAFE Small": 1.0,
-      "MAMBA Small": 1.0,
-      "Hybrid Small": 1.0,
-      "MAMBA Large": 1.0,
-      "SAFE Large": 0.98,
+      metric: "Average Token Length",
+      "BPE SAFE": 0.45,
+      "ULM SAFE": 0.5,
+      "BPE SELFIES": 0.35,
+      "ULM SELFIES": 0.4,
     },
     {
-      metric: "Uniqueness",
-      "SAFE Small": 0.999,
-      "MAMBA Small": 0.999,
-      "Hybrid Small": 0.999,
-      "MAMBA Large": 1.0,
-      "SAFE Large": 1.0,
+      metric: "Compression Ratio",
+      "BPE SAFE": 1.8,
+      "ULM SAFE": 1.6,
+      "BPE SELFIES": 2.05,
+      "ULM SELFIES": 1.9,
     },
     {
-      metric: "Diversity",
-      "SAFE Small": 0.864,
-      "MAMBA Small": 0.86,
-      "Hybrid Small": 0.862,
-      "MAMBA Large": 0.873,
-      "SAFE Large": 0.88,
+      metric: "QED Score",
+      "BPE SAFE": 0.72,
+      "ULM SAFE": 0.81,
+      "BPE SELFIES": 0.75,
+      "ULM SELFIES": 0.85,
+    },
+    {
+      metric: "SAS Score",
+      "BPE SAFE": 3.5,
+      "ULM SAFE": 2.8,
+      "BPE SELFIES": 3.6,
+      "ULM SELFIES": 2.9,
     },
   ];
 
@@ -44,14 +48,13 @@ const PerformanceChart = () => {
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="metric" />
-        <YAxis domain={[0, 1]} />
+        <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="SAFE Small" fill="#8884d8" />
-        <Bar dataKey="MAMBA Small" fill="#82ca9d" />
-        <Bar dataKey="Hybrid Small" fill="#ffc658" />
-        <Bar dataKey="MAMBA Large" fill="#ff7300" />
-        <Bar dataKey="SAFE Large" fill="#a4de6c" />
+        <Bar dataKey="BPE SAFE" fill="#8884d8" />
+        <Bar dataKey="ULM SAFE" fill="#82ca9d" />
+        <Bar dataKey="BPE SELFIES" fill="#ffc658" />
+        <Bar dataKey="ULM SELFIES" fill="#ff7300" />
       </BarChart>
     </ResponsiveContainer>
   );

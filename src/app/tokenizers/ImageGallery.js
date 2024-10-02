@@ -7,7 +7,6 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
   if (!isOpen) return null;
 
   const handleOverlayClick = (e) => {
-    // Close the modal if the click is on the overlay or the image
     if (e.target === e.currentTarget || e.target.tagName === "IMG") {
       onClose();
     }
@@ -38,58 +37,23 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
 
 // Main ImageGallery component
 const ImageGallery = () => {
-  const [activeTab, setActiveTab] = useState("small");
+  const [activeTab, setActiveTab] = useState("averageTokenLength");
   const [modalImage, setModalImage] = useState(null);
 
-  const distributionProperties = [
-    "Aromatic Rings",
-    "H-Bond Acceptors",
-    "H-Bond Donors",
-    "LogP",
-    "Molecular Weight",
-    "QED",
-    "Rotatable Bonds",
-    "TPSA",
-  ];
-
-  const smallModelImages = distributionProperties.map((prop) => ({
-    src: `/images/small_model_${prop
-      .toLowerCase()
-      .replace(/-/g, "_")
-      .replace(/ /g, "_")}.png`,
-    alt: `${prop} Distribution (Small Models)`,
-  }));
-
-  const largeModelImages = distributionProperties.map((prop) => ({
-    src: `/images/large_model_${prop
-      .toLowerCase()
-      .replace(/-/g, "_")
-      .replace(/ /g, "_")}.png`,
-    alt: `${prop} Distribution (Large Models)`,
-  }));
-
-  const perplexityImages = [
-    {
-      src: "/images/perplexity_small_models.png",
-      alt: "Perplexity for Small Models",
-    },
-    {
-      src: "/images/perplexity_large_models.png",
-      alt: "Perplexity for Large Models",
-    },
-  ];
+  const images = {
+    averageTokenLength: [
+      { src: "/images/mo/token_length.png", alt: "Average Token Length" },
+    ],
+    compressionRatio: [
+      { src: "/images/mo/compression_ratio.png", alt: "Compression Ratio" },
+    ],
+    qedSas: [
+      { src: "/images//mo/qed_sas.png", alt: "QED and SAS Comparison" },
+    ],
+  };
 
   const getActiveImages = () => {
-    switch (activeTab) {
-      case "small":
-        return smallModelImages;
-      case "large":
-        return largeModelImages;
-      case "perplexity":
-        return perplexityImages;
-      default:
-        return smallModelImages;
-    }
+    return images[activeTab] || [];
   };
 
   const handleImageClick = (image) => {
@@ -103,7 +67,7 @@ const ImageGallery = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-center space-x-4">
-        {["small", "large", "perplexity"].map((tab) => (
+        {["averageTokenLength", "compressionRatio", "qedSas"].map((tab) => (
           <button
             key={tab}
             className={`px-4 py-2 rounded transition-colors ${
@@ -113,9 +77,9 @@ const ImageGallery = () => {
             }`}
             onClick={() => setActiveTab(tab)}
           >
-            {tab === "small" && "Small Model Distributions"}
-            {tab === "large" && "Large Model Distributions"}
-            {tab === "perplexity" && "Perplexity Graphs"}
+            {tab === "averageTokenLength" && "Average Token Length"}
+            {tab === "compressionRatio" && "Compression Ratio"}
+            {tab === "qedSas" && "QED & SAS"}
           </button>
         ))}
       </div>
@@ -139,7 +103,6 @@ const ImageGallery = () => {
           </div>
         ))}
       </div>
-      {/* ImageModal can be closed by clicking anywhere on the overlay or the image */}
       <ImageModal
         isOpen={!!modalImage}
         onClose={closeModal}
