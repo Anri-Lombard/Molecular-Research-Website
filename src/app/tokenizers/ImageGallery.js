@@ -48,7 +48,7 @@ const ImageGallery = () => {
       { src: "/images/mo/compression_ratio.png", alt: "Compression Ratio" },
     ],
     qedSas: [
-      { src: "/images//mo/qed_sas.png", alt: "QED and SAS Comparison" },
+      { src: "/images/mo/qed_sas.png", alt: "QED and SAS Comparison" },
     ],
   };
 

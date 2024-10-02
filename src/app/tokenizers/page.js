@@ -236,4 +236,4 @@ const ArchitecturesPage = () => {
   );
 };
 
-export default TokenizersPage;
+export default ArchitecturesPage;
