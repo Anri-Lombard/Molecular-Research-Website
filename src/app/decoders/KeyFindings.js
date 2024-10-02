@@ -20,14 +20,18 @@ import React from "react";
 // temperature sampling generated unique molecules with a much
 // lower hyper-parameter. Moreover, top-p consistently resulted in
 const KeyFindings = () => {
-  const findings = ["Molecular generation is an open-ended  task",
-                    "Sampling-based methods outperformed search-based methods",
-                    "Temperature sampling is effective for generating unique molecules",
-                    "Repetition penalty improved performance for the large model",
-                    "Search-based methods produced high SA scores and low QED scores",
-                    "Top-p sampling required a high hyper-parameter to have an adequate the uniqueness score",
-                    
-                    ];
+  const findings = [
+    // "Sampling-based methods outperformed search-based methods in de novo generation",
+    // "Temperature and top-p sampling are effective for generating unique molecules",
+    // "Introducing a repetition penalty improves performance of the large SAFE-GPT model",
+    // "Search-based methods produced high SA scores and low QED scores in de novo molecular generation",
+    // "Top-p sampling required a high hyper-parameter to have an adequate uniqueness score",
+    "Sampling-based methods (e.g., top-p and temperature sampling) outperformed search-based methods in de novo molecular generation.",
+    "Search-based methods yielded higher SA scores but lower QED scores.",
+    "Top-p sampling required high hyper-parameters to achieve an adequate uniqueness.",
+    "Introducing a repetition penalty improved the performance of the large SAFE-GPT model."
+
+  ];
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">

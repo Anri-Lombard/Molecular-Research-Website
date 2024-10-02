@@ -158,7 +158,7 @@ const ArchitecturesPage = () => {
           <FadeInSection delay={0.6}>
             <ArchitectureComparison
               title="Stochastic methods"
-              description="Stochastic methods are more suitable for tasks like conditional story generation and contextual text continuation. They allow for a significant degree of freedom in determining what can plausibly come next. Sampling-based methods are examples of stochastic methods. Methods like top-p sampling and temperature sampling are used to generate diverse and unique molecules."
+              description="Stochastic methods are particularly suitable for tasks that require creativity and diversity because they introduce a significant degree of freedom in determining plausible outcomes. Sampling-based techniques, such as top-p sampling and temperature sampling, are examples of stochastic methods that generate diverse and unique molecules."
               icon={Cpu}
               expanded={expandedSection === "stochastic"}
               onToggle={() => toggleSection("stochastic")}

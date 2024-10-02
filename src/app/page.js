@@ -204,7 +204,7 @@ export default function Home() {
               {
                 name: "Decoders",
                 description:
-                  "Investigating decoding strategies in molecular generation models",
+                  "Investigating various decoding strategies in de novo molecular generation as a means to maximse the quality of the generated output",
               },
             ].map((project, index) => (
               <FadeInSection key={project.name} delay={0.2 * (index + 1)}>
