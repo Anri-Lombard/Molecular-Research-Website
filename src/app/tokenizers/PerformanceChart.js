@@ -31,15 +31,15 @@ const PerformanceChart = () => {
       metric: "QED Score",
       "BPE SAFE": 0.72,
       "ULM SAFE": 0.81,
-      "BPE SELFIES": 0.75,
+      "BPE SELFIES": 0.65,
       "ULM SELFIES": 0.85,
     },
     {
       metric: "SAS Score",
       "BPE SAFE": 3.5,
       "ULM SAFE": 2.8,
-      "BPE SELFIES": 3.6,
-      "ULM SELFIES": 2.9,
+      "BPE SELFIES": 3.72,
+      "ULM SELFIES": 2.54,
     },
   ];
 

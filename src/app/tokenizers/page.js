@@ -166,9 +166,9 @@ const ArchitecturesPage = () => {
           </div>
         </FadeInSection>
 
-        <FadeInSection delay={1.0}>
+        {/*<FadeInSection delay={1.0}>
           <ComputationalEfficiency />
-        </FadeInSection>
+        </FadeInSection>*/}
 
         <FadeInSection delay={1.1}>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">

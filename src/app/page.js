@@ -194,7 +194,7 @@ export default function Home() {
               {
                 name: "Tokenizers",
                 description:
-                  "Exploring various tokenization methods for molecular representations",
+                  "Exploring tokenization techniques like BPE and ULM, used to convert molecular structures into token sequences, and evaluating their performance based on metrics such as token length and compression.",
               },
               {
                 name: "Architectures",
