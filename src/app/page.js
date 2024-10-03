@@ -12,6 +12,7 @@ import {
   Zap,
   FileText,
   BarChart,
+  ArrowRight
 } from "lucide-react";
 
 const FadeInSection = ({ children, delay = 0 }) => {
@@ -194,7 +195,7 @@ export default function Home() {
               {
                 name: "Tokenizers",
                 description:
-                  "Exploring tokenization techniques like BPE and ULM, used to convert molecular structures into token sequences, and evaluating their performance based on metrics such as token length and compression.",
+                  "Exploring tokenization techniques like BPE and ULM, used to convert molecular structures into token sequences, and evaluating their performance based on metrics such as token length and compression",
               },
               {
                 name: "Architectures",
@@ -204,7 +205,7 @@ export default function Home() {
               {
                 name: "Decoders",
                 description:
-                  "Investigating decoding strategies in molecular generation models",
+                  "Investing search based methods (Greedy and Beam search) and sampling based methods (top-p and temperature) to improve de-novo generated output of the molecular generation model, Safe-GPT",
               },
             ].map((project, index) => (
               <FadeInSection key={project.name} delay={0.2 * (index + 1)}>
@@ -217,6 +218,32 @@ export default function Home() {
               </FadeInSection>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <FadeInSection>
+            <div className="text-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a
+                href="/documents/project_proposal.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Project Proposal
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+              </a>
+              <a
+                href="/documents/poster.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Poster
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+              </a>
+            </div>
+          </FadeInSection>
         </div>
       </section>
     </div>
