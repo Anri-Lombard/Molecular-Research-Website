@@ -16,7 +16,7 @@ import {
   ChartBar,
 } from "lucide-react";
 import PerformanceChart from "./PerformanceChart";
-import TokenizationEfficiencyTable from "./TokenizationEfficiencyTable";
+import TokenizationComparisonTable from "./TokenizationComparisonTable";
 import ResearchQuestions from "./ResearchQuestions";
 import KeyFindings from "./KeyFindings";
 import ComputationalEfficiency from "./ComputationalEfficiency";
@@ -160,9 +160,9 @@ const ArchitecturesPage = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center">
               <Brain className="mr-2" />
-              Tokenization Efficiency Comparison
+              Tokenization Comparison
             </h2>
-            <TokenizationEfficiencyTable />
+            <TokenizationComparisonTable />
           </div>
         </FadeInSection>
 

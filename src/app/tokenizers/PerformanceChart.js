@@ -11,52 +11,97 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const PerformanceChart = () => {
-  const data = [
+// Component for Token Length and Compression Ratio chart
+const TokenizationChart = () => {
+  const tokenData = [
     {
-      metric: "Average Token Length",
-      "BPE SAFE": 0.45,
-      "ULM SAFE": 0.5,
-      "BPE SELFIES": 0.35,
-      "ULM SELFIES": 0.4,
+      name: "BPE SAFE",
+      "Average Token Length": 31.80,
+      "Compression Ratio": 1.41,
     },
     {
-      metric: "Compression Ratio",
-      "BPE SAFE": 1.8,
-      "ULM SAFE": 1.6,
-      "BPE SELFIES": 2.05,
-      "ULM SELFIES": 1.9,
+      name: "ULM SAFE",
+      "Average Token Length": 45.50,
+      "Compression Ratio": 0.99,
     },
     {
-      metric: "QED Score",
-      "BPE SAFE": 0.72,
-      "ULM SAFE": 0.81,
-      "BPE SELFIES": 0.65,
-      "ULM SELFIES": 0.85,
+      name: "BPE SELFIES",
+      "Average Token Length": 79.88,
+      "Compression Ratio": 2.05,
     },
     {
-      metric: "SAS Score",
-      "BPE SAFE": 3.5,
-      "ULM SAFE": 2.8,
-      "BPE SELFIES": 3.72,
-      "ULM SELFIES": 2.54,
+      name: "ULM SELFIES",
+      "Average Token Length": 164.99,
+      "Compression Ratio": 0.99,
     },
   ];
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <BarChart data={data}>
+      <BarChart data={tokenData} margin={{ left: 20, right: 20, top: 20, bottom: 20 }}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="metric" />
+        <XAxis dataKey="name" />
+        <YAxis yAxisId="token" orientation="left" label={{ value: "Token Length", angle: -90, position: 'insideLeft' }} />
+        <YAxis yAxisId="compression" orientation="right" label={{ value: "Compression Ratio", angle: 90, position: 'insideRight' }} />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="Average Token Length" fill="#8884d8" yAxisId="token" />
+        <Bar dataKey="Compression Ratio" fill="#82ca9d" yAxisId="compression" />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+};
+
+// Component for QED and SAS Scores chart
+const QSASChart = () => {
+  const scoreData = [
+    {
+      name: "BPE SAFE",
+      "QED Score": 0.72,
+      "SAS Score": 3.5,
+    },
+    {
+      name: "ULM SAFE",
+      "QED Score": 0.81,
+      "SAS Score": 2.8,
+    },
+    {
+      name: "BPE SELFIES",
+      "QED Score": 0.65,
+      "SAS Score": 3.72,
+    },
+    {
+      name: "ULM SELFIES",
+      "QED Score": 0.85,
+      "SAS Score": 2.54,
+    },
+  ];
+
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <BarChart data={scoreData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="BPE SAFE" fill="#8884d8" />
-        <Bar dataKey="ULM SAFE" fill="#82ca9d" />
-        <Bar dataKey="BPE SELFIES" fill="#ffc658" />
-        <Bar dataKey="ULM SELFIES" fill="#ff7300" />
+        <Bar dataKey="QED Score" fill="#8884d8" />
+        <Bar dataKey="SAS Score" fill="#82ca9d" />
       </BarChart>
     </ResponsiveContainer>
+  );
+};
+
+// Main Component
+const PerformanceChart = () => {
+  return (
+    <div>
+      <h2>Token Length and Compression Ratio</h2>
+      <TokenizationChart />
+
+      <h2>QED and SAS Scores</h2>
+      <QSASChart />
+    </div>
   );
 };
 
