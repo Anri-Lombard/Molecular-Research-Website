@@ -98,21 +98,23 @@ const ArchitecturesPage = () => {
       <div className="max-w-7xl mx-auto">
         <FadeInSection>
           <h1 className="text-5xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          Tokenization Techniques in Molecular Generation
+            Tokenization Techniques in Molecular Generation
           </h1>
         </FadeInSection>
 
         <FadeInSection delay={0.2}>
           <p className="text-xl text-center mb-12 text-gray-700 dark:text-gray-300">
-          Exploring the impact of Byte Pair Encoding (BPE) and Unigram Language Model (ULM) tokenization techniques on molecular generation using SAFE and SELFIES representations.
+            Exploring the impact of Byte Pair Encoding (BPE) and Unigram
+            Language Model (ULM) tokenization techniques on molecular generation
+            using SAFE and SELFIES representations.
           </p>
         </FadeInSection>
 
         <FadeInSection delay={0.3}>
           <div className="bg-blue-100 dark:bg-blue-900 rounded-lg p-4 mb-8 shadow-md">
             <p className="text-sm text-center italic text-blue-800 dark:text-blue-200">
-              Research conducted by Mahomed Aadil Ally, supervised by Jan Buys at the
-              University of Cape Town
+              Research conducted by Mahomed Aadil Ally, supervised by Jan Buys
+              at the University of Cape Town
             </p>
           </div>
         </FadeInSection>
@@ -187,23 +189,31 @@ const ArchitecturesPage = () => {
               Implications of Tokenization for AI-Driven Molecular Design
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-            The comparison of Byte Pair Encoding (BPE) and Unigram Language Model (ULM) tokenization techniques reveals significant implications for AI-driven molecular design:
+              The comparison of Byte Pair Encoding (BPE) and Unigram Language
+              Model (ULM) tokenization techniques reveals significant
+              implications for AI-driven molecular design:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               <li>
-              Improved efficiency in processing large molecular datasets with BPE's compact representations
+                Improved efficiency in processing large molecular datasets with
+                BPE's compact representations
               </li>
               <li>
-              Enhanced generation of synthetically accessible molecules using ULM, particularly with SELFIES representations
+                Enhanced generation of synthetically accessible molecules using
+                ULM, particularly with SELFIES representations
               </li>
               <li>
-              Necessity for task-specific optimization due to the complex relationship between tokenization efficiency and molecular generation quality
+                Necessity for task-specific optimization due to the complex
+                relationship between tokenization efficiency and molecular
+                generation quality
               </li>
               <li>
-              Potential for fine-tuning model performance by balancing vocabulary size and tokenization efficiency
+                Potential for fine-tuning model performance by balancing
+                vocabulary size and tokenization efficiency
               </li>
               <li>
-              Significant impact on the quality and diversity of generated molecules based on tokenization technique choice
+                Significant impact on the quality and diversity of generated
+                molecules based on tokenization technique choice
               </li>
             </ul>
           </div>
@@ -236,4 +246,4 @@ const ArchitecturesPage = () => {
   );
 };
 
-export default TokenizersPage;
+export default ArchitecturesPage;

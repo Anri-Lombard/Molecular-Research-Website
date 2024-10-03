@@ -51,6 +51,45 @@ const FadeInSection = ({ children, delay = 0 }) => {
   );
 };
 
+const ImplicationsSection = () => (
+  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+    <h2 className="text-2xl font-semibold mb-4 flex items-center">
+      <Zap className="mr-2" />
+      Implications for AI-Driven Molecular Design
+    </h2>
+    <p className="text-gray-600 dark:text-gray-300 mb-4">
+      The comparable performance of MAMBA models to Transformer-based models,
+      along with their efficiency advantages, has important implications for
+      AI-driven molecular design.
+    </p>
+    <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+      <li>
+        MAMBA models can handle longer molecular sequences more efficiently,
+        which could improve the modeling of complex molecules.
+      </li>
+      <li>
+        The improved efficiency of these models might accelerate the drug
+        discovery process, potentially reducing the time needed to find new
+        therapeutic compounds.
+      </li>
+      <li>
+        State Space Models offer an efficient alternative to Transformers for
+        large-scale applications in molecular design and analysis.
+      </li>
+      <li>
+        The speed of MAMBA models could allow researchers to explore a wider
+        range of molecular structures, potentially leading to new discoveries in
+        various fields of chemistry.
+      </li>
+    </ul>
+    <p className="mt-4 text-gray-600 dark:text-gray-300">
+      These advancements in MAMBA models have the potential to bring about
+      significant improvements in computational chemistry methods and drug
+      discovery processes.
+    </p>
+  </div>
+);
+
 const ArchitectureComparison = ({
   title,
   description,
@@ -187,34 +226,7 @@ const ArchitecturesPage = () => {
         </FadeInSection>
 
         <FadeInSection delay={1.2}>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center">
-              <Zap className="mr-2" />
-              Implications for AI-Driven Molecular Design
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              The comparable performance of MAMBA models to Transformer-based
-              models, coupled with their efficiency advantages, has significant
-              implications for AI-driven molecular design:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-              <li>
-                Potential for handling longer molecular sequences efficiently
-              </li>
-              <li>
-                Opens up possibilities for modeling complex macromolecules or
-                entire chemical pathways
-              </li>
-              <li>
-                Improved computational efficiency could accelerate drug
-                discovery processes
-              </li>
-              <li>
-                State Space Models offer a viable and efficient alternative to
-                Transformer-based models for large-scale applications
-              </li>
-            </ul>
-          </div>
+          <ImplicationsSection />
         </FadeInSection>
 
         <FadeInSection delay={1.3}>
