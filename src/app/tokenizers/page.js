@@ -196,7 +196,7 @@ const ArchitecturesPage = () => {
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               <li>
                 Improved efficiency in processing large molecular datasets with
-                BPE's compact representations
+                BPE&apos;s compact representations
               </li>
               <li>
                 Enhanced generation of synthetically accessible molecules using
