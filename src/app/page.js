@@ -195,7 +195,7 @@ export default function Home() {
               {
                 name: "Tokenizers",
                 description:
-                  "Exploring various tokenization methods for molecular representations",
+                  "Exploring tokenization techniques like BPE and ULM, used to convert molecular structures into token sequences, and evaluating their performance based on metrics such as token length and compression",
               },
               {
                 name: "Architectures",
@@ -205,7 +205,7 @@ export default function Home() {
               {
                 name: "Decoders",
                 description:
-                  "Investigating various decoding strategies in de novo molecular generation as a means to maximse the quality of the generated output",
+                  "Investigating search based methods (Greedy and Beam search) and sampling based methods (top-p and temperature) to improve de-novo generated output of the molecular generation model, Safe-GPT",
               },
             ].map((project, index) => (
               <FadeInSection key={project.name} delay={0.2 * (index + 1)}>
